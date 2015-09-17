@@ -177,33 +177,33 @@
 
         /* UI 菜单 - 打开 */
         { path: 'ui/menu/open/open.js',                 pack: 'edit' },
-        { path: 'ui/menu/open/recent.js',               pack: 'edit' },
-        { path: 'ui/menu/open/netdisk.js',              pack: 'edit' },
-        { path: 'ui/menu/open/local.js',                pack: 'edit' },
-        { path: 'ui/menu/open/draft.js',                pack: 'edit' },
+        //{ path: 'ui/menu/open/recent.js',               pack: 'edit' },
+        //{ path: 'ui/menu/open/netdisk.js',              pack: 'edit' },
+        //{ path: 'ui/menu/open/local.js',                pack: 'edit' },
+        //{ path: 'ui/menu/open/draft.js',                pack: 'edit' },
 
         /* UI 菜单 - 保存 */
         { path: 'ui/menu/save/save.js',                 pack: 'edit|share' },
-        { path: 'ui/menu/save/netdisk.js',              pack: 'edit' },
-        { path: 'ui/menu/save/download.js',             pack: 'edit|share' },
+        //{ path: 'ui/menu/save/netdisk.js',              pack: 'edit' },
+        //{ path: 'ui/menu/save/download.js',             pack: 'edit|share' },
 
         /* UI 菜单 - 分享 */
-        { path: 'ui/menu/share/share.js',               pack: 'edit' },
+        //{ path: 'ui/menu/share/share.js',               pack: 'edit' },
         { path: 'ui/menu/share/view.js',                pack: 'share' },
-        { path: 'ui/menu/share/m-share.js',             pack: 'm-share' },
+        //{ path: 'ui/menu/share/m-share.js',             pack: 'm-share' },
 
         /* UI 菜单 - 帮助 */
         { path: 'ui/menu/help/help.js',                 pack: 'edit|share'},
-        { path: 'ui/menu/help/feedback.js',             pack: 'edit|share'},
+        //{ path: 'ui/menu/help/feedback.js',             pack: 'edit|share'},
 
         /* UI Top Bar */
         { path: 'ui/topbar/quickvisit.js',              pack: 'edit|share' },
         { path: 'ui/topbar/history.js',                 pack: 'edit' },
-        { path: 'ui/topbar/user.js',                    pack: 'edit' },
-        { path: 'ui/topbar/feedback.js',                pack: 'edit|share' },
-        { path: 'ui/topbar/search.js',                  pack: 'edit|share' },
-        { path: 'ui/topbar/switch-view.js',             pack: 'm-share' },
-        { path: 'ui/topbar/m-logo.js',                  pack: 'm-share' },
+        // { path: 'ui/topbar/user.js',                    pack: 'edit' },
+        //{ path: 'ui/topbar/feedback.js',                pack: 'edit|share' },
+        //{ path: 'ui/topbar/search.js',                  pack: 'edit|share' },
+        //{ path: 'ui/topbar/switch-view.js',             pack: 'm-share' },
+        //{ path: 'ui/topbar/m-logo.js',                  pack: 'm-share' },
         { path: 'ui/topbar/title.js',                   pack: 'edit|share|m-share' },
 
         /* UI Ribbon */

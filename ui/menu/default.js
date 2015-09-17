@@ -17,33 +17,33 @@ KityMinder.registerUI('menu/default', function(minder) {
         var $share = minder.getUI('menu/share/share');
         var $draft = minder.getUI('menu/open/draft');
 
-        setMenuDefaults();
+        //setMenuDefaults();
         
         // $menu.show();
         // $menu.$tabs.select(1);
         // $open.$tabs.select(1);
         // return;
 
-        loadLandingFile();
+        //loadLandingFile();
         function setMenuDefaults() {
 
-            // 主菜单默认选中「打开」
-            $menu.$tabs.select(1);
+            // // 主菜单默认选中「打开」
+            // $menu.$tabs.select(1);
 
-            // 打开菜单默认选中「本地文件」
-            $open.$tabs.select(2);
+            // // 打开菜单默认选中「本地文件」
+            // $open.$tabs.select(2);
 
-            // 保存菜单默认选中「导出到本地」
-            $save.$tabs.select(1);
+            // // 保存菜单默认选中「导出到本地」
+            // $save.$tabs.select(1);
 
-            // 如果用户登陆了，选中「百度云存储」
-            fio.user.check().then(function(user) {
-                if (user) {
-                    $save.$tabs.select(0);
-                }
-            });
+            // // 如果用户登陆了，选中「百度云存储」
+            // fio.user.check().then(function(user) {
+            //     if (user) {
+            //         $save.$tabs.select(0);
+            //     }
+            // });
 
-            $share.$menu.$tabs.select(0); // 当前脑图
+            // $share.$menu.$tabs.select(0); // 当前脑图
         }
 
         function loadLandingFile() {

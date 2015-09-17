@@ -106,6 +106,38 @@ kity.extendClass(Minder, {
         });
         this._interactChange();
     },
+    lazyImportJson: function(json, params) {
+
+        function importNode(node, data, km) {
+            node.data = {};
+            for (var field in data) {
+                node.setData(field, data[field]);
+            }
+            node.setData('text', data.name || km.getLang(DEFAULT_TEXT[node.getType()]));
+            return node;
+        }
+        if (!json) return;
+        this._fire(new MinderEvent('preimport', params, false));
+        // 删除当前所有节点
+        while (this._root.getChildren().length) {
+            this.removeNode(this._root.getChildren()[0]);
+        }
+
+        json = KityMinder.compatibility(json);
+
+        importNode(this._root, json.data, this);
+
+        this.setTemplate(json.template || 'default');
+        this.setTheme(json.theme || null);
+        this.refresh();
+
+        this.fire('import', params);
+
+        this._firePharse({
+            type: 'contentchange'
+        });
+        this._interactChange();
+    },
 
     exportData: function(protocolName, options) {
 

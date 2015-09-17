@@ -60,6 +60,7 @@ Minder.Receiver = kity.createClass('Receiver', {
     },
 
     updateByMinderNode:function(node){
+
         this.setMinderNode(node);
         //追加selection到节点
         this._addSelection();
@@ -73,6 +74,8 @@ Minder.Receiver = kity.createClass('Receiver', {
         this.setSelectionHeight();
         //更新接收容器内容
         this.setContainerTxt();
+        new Error();
+        console.log(1);
         return this;
     },
     setMinderNode: function(node) {
@@ -84,7 +87,6 @@ Minder.Receiver = kity.createClass('Receiver', {
         if (this.selection.container){
             this.selection.remove();
         }
-
         this.minderNode.getRenderContainer().addShape(this.selection);
         return this;
     },
