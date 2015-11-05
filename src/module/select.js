@@ -26,7 +26,6 @@ KityMinder.registerModule('Select', function() {
                 if (startPosition) {
                     return this.selectEnd();
                 }
-
                 startPosition = g.snapToSharp(e.getPosition(rc));
             },
             selectMove: function(e) {

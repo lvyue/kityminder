@@ -30,7 +30,7 @@ html, body {
 }
 
 #kityminder {
-    .dock(100px, 0, 0, 0);
+    .dock(@panel-height + @tab-container-height, 0, 0, 0);
     &.maximize {
         top: 40px;
     }
@@ -130,6 +130,42 @@ html, body {
             }
         }
     }
+}
+
+#slide {
+    position : absolute;
+    top: @panel-height;
+    right:-270px;
+    bottom:0;
+    width: 320px;
+    //padding:0 5px;
+    background: @slide-color;
+    .left-menu {
+        width: 40px;
+        height: 100%;
+        float:left;
+        padding: 0 5px;
+        div {
+            padding:4px 4px;
+            background:#21252d;
+            margin-top: 10px;
+            cursor: pointer;
+            &.active {
+            background:#10cfbd;
+            }
+            a {
+                display:block;
+                width: 32px;
+                height:32px;
+            }
+        }
+    }
+   .right-dialog {
+       width: 270px;
+       height: 100%;
+       float: right;
+       background: #C3C3C3;
+   }
 }
 
 .fui-widget {

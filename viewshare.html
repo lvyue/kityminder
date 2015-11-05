@@ -1,123 +1,145 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="title" content="百度脑图（KityMinder）">
-    <meta name="keyword" content="kityminder,脑图,思维导图,kity,svg,minder,百度,fex,前端,在线">
-    <meta name="description" content="百度脑图，便捷的脑图编辑工具。让您在线上直接创建、保存并分享你的思路。">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>百度脑图 - 便捷的思维导图工具</title>
-    <script src="import.js?pack=share" charset="utf-8"></script>
-    <script src="kityminder.config.js" charset="utf-8"></script>
-    <script src="lang/zh-cn/zh-cn.js" charset="utf-8"></script>
-    
-    <link href="ui/theme/default/css/default.all.css" type="text/css" rel="stylesheet" />
+	<head>
+		<meta charset="utf-8">
+		<meta name="title" content="百度脑图（KityMinder）">
+		<meta name="keyword" content="kityminder,脑图,思维导图,kity,svg,minder,百度,fex,前端,在线">
+		<meta name="description" content="百度脑图，便捷的脑图编辑工具。让您在线上直接创建、保存并分享你的思路。">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
-    <link href="favicon.ico" type="image/x-icon" rel="apple-touch-icon-precomposed">
-</head>
+		<title>百度脑图 - 便捷的思维导图工具</title>
+		<script src="import.js?pack=share" charset="utf-8"></script>
+		<script src="kityminder.config.js" charset="utf-8"></script>
+		<script src="lang/zh-cn/zh-cn.js" charset="utf-8"></script>
 
-<body>
-<div id="content-wrapper" class="shared-content">
-    <div id="panel"></div>
+		<link href="ui/theme/default/css/default.all.css" type="text/css" rel="stylesheet" />
 
-    <div id="kityminder" onselectstart="return false">
-        
-    </div>
-</div>
-</body>
+		<link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
+		<link href="favicon.ico" type="image/x-icon" rel="apple-touch-icon-precomposed">
+		<link href="http://7xnn49.com1.z0.glb.clouddn.com/layer/skin/layer.ext.css" type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="http://7xnn49.com1.z0.glb.clouddn.com/layer/layer.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./project.js" charset="UTF-8"></script>
+		<style type="text/css">
+			.res-box {padding:10px;}
+			.res-box > .img-list > img{display:block;margin: 0 auto;max-width: 80%;margin-bottom:20px;}
+			.res-box > .video{border:1px solid #C3C3C3;}
+			.res-box > .video > .video-area{width:80%;float:left;background: #f8f8f8;}
+			.res-box > .video > .video-list{width: 20%;float:right;}
+			.res-box > .video > .video-list > a{color:#080808;text-decoration:none;display: block;padding: 0 10px;height: 40px;line-height: 40px;border-bottom:1px dashed #c3c3c3; overflow: hidden;}
+			.res-box > .video > .video-list > a:hover{background: #C8CCD6;}
+			.res-box > .video > .video-list > a.active,.res-box > .video > .video-list > a.active:hover{background:#47b5ab;}
+			.clearfix{clear: both;}
+		</style>
+	</head>
 
-<!--脑图启动代码-->
-<script>
+	<body>
+		<div id="content-wrapper" class="shared-content">
+			<div id="panel"></div>
 
-/* global km:true, ZeroClipboard:true, zip:true */
-/* jshint browser:true */
-function getQueryString(name) {
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) {
-            return unescape(r[2]);
-        } 
-        return null;
-}
-$(function() {
+			<div id="kityminder" onselectstart="return false">
 
-    // create km instance
-    km = KM.getMinder('kityminder', window.KITYMINDER_CONFIG);
+			</div>
+			<div id="slide">
+				<div class="left-menu">
+					<div class="" data-type="target">
+						<a href="javascript:;" class="icon-res" title="目标"></a>
+					</div>
+					<div class="" data-type="desc">
+						<a href="javascript:;" class="icon-desc" title="描述"></a>
+					</div>
+					<div class="" data-type="requirement">
+						<a href="javascript:;" class="icon-res" title="要求"></a>
+					</div>
+					<div class="" data-type="photo">
+						<a href="javascript:;" class="icon-pic" title="图片"></a>
+					</div>
+					<div class="" data-type="video">
+						<a href="javascript:;" class="icon-video" title="视频"></a>
+					</div>
+					<div class="" data-type="docs">
+						<a href="javascript:;" class="icon-doc" title="文档"></a>
+					</div>
+					<div class="" data-type="attch">
+						<a href="javascript:;" class="icon-res" title="资料"></a>
+					</div>
+					<div class="" data-type="exam">
+						<a href="javascript:;" class="icon-res" title="考试"></a>
+					</div>
+					<div class="" data-type="comment">
+						<a href="javascript:;" class="icon-res" title="评论"></a>
+					</div>
+				</div>
+				<div class="right-dialog"></div>
+			</div>
+			<div id="pop-window" style="display:none;position:absolute;z-index:99999;width:800px;height:600px;margin:0 auto;overflow:scroll;background:#F00;">
+				<div class="main-window" style="float:left;width:80%;">
 
-    // init ui for instance
-    km.initUI();
-    var lastVersion = localStorage.lastKMVersion;
-    $('#km-version').text( 'v' + KM.version );
+				</div>
+				<div class="right-nav" style="float:right;width:20%;">
 
-    if (lastVersion != KM.version) {
-        $( '#km-version' ).addClass( 'new-version' );
-        localStorage.lastKMVersion = KM.version;
-    }
-//
-        var _projectId = getQueryString("p");
-        $.ajax({
-            "url"     : "/projects/" + _projectId,
-            "type"    : "GET",
-            "cache"   : false,
-            "datType" : "json",
-            "success" : function (result){
-                if (result.code != 0) {
-                    alert(result.msg || "系统错误，请稍后重试!!!");
-                    return;
-                }
-                result.template = "default";
-                result.theme = "fresh-blue";
-                // 载入跟节点
-                km.lazyImportJson(result);
-                // 延迟展开
-                km.on('mousedown touch',function (event){
-                    // 获取当前节点
-                    var _minderNode = event.getTargetNode();
-                    // 判断事件触发源是否是节点
-                    if (_minderNode && _minderNode instanceof MinderNode) {
-                        // 获取子节点数据
-                        var _children = _minderNode.getData("children");
-                        // 获取 判断标志为
-                        var _isLoad = _minderNode.getData("isLoad");
-                        // 判断该节点是否已载入，判断此节点是否有子节点
-                        if (!_isLoad && _children && _children.length > 0){
-                            for (var i = 0; i < _children.length; i++ ){
-                                var  e = _children[i];
-                                // 创建子节点
-                                var childNode = km.createNode(null, _minderNode);
-                                //
-                                childNode.data = {};
-                                // 设置自节点属性
-                                for (var field in e) {
-                                    childNode.setData(field, e[field]);
-                                }
-                                childNode.setData('text', e.name || km.getLang(DEFAULT_TEXT[childNode.getType()]));
-                            }
-                            // 设置展开标志位
-                            _minderNode.setData('isLoad',true);
-                            //
-                            _minderNode.setData('children',[]);
-                        }
-                        // 判断节点是否展开，如果未展开，则自动展开节点
-                        if (_minderNode.isCollapsed()){
-                            _minderNode.expand();
-                        }
-                        // 刷新脑图
-                        km.refresh(500);
-                        //
-                        km.execCommand('camera',_minderNode,50);
-                        
-                    }
-                });
-            },
-            "error"   : function (){
-                alert("系统错误，请稍后重试!!!");
-            }
-        });
+				</div>
+				<div style="clear:both;"></div>
+			</div>
+		</div>
+	</body>
 
-});
+	<!--脑图启动代码-->
+	<script>
+		 /* global km:true, ZeroClipboard:true, zip:true */
+		/* jshint browser:true */
+		function getQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+			var r = window.location.search.substr(1).match(reg);
+			if (r != null) {
+				return unescape(r[2]);
+			}
+			return null;
+		}
+		$(function() {
+			// create km instance
+			km = KM.getMinder('kityminder', window.KITYMINDER_CONFIG);
+			// init ui for instance
+			km.initUI();
+			var lastVersion = localStorage.lastKMVersion;
+			$('#km-version').text('v' + KM.version);
+			if (lastVersion != KM.version) {
+				$('#km-version').addClass('new-version');
+				localStorage.lastKMVersion = KM.version;
+			}
+			//
+			var _projectId = getQueryString("p");
+			km.on('click', function(event) {
+				// 获取当前节点
+				var _minderNode = event.getTargetNode();
+				// 判断事件触发源是否是节点
+				if (_minderNode && (_minderNode instanceof KityMinder.MinderNode)) { // 节点选中触发
+					var _data = _minderNode.data;
+					Project.init(_data);
+				}
+			});
+			$.ajax({
+				"url": "/projects/" + _projectId,
+				"type": "GET",
+				"cache": false,
+				"datType": "json",
+				"success": function(result) {
+					if (result.code != 0) {
+						alert(result.msg || "系统错误，请稍后重试!!!");
+						return;
+					}
+					result.template = "default";
+					result.theme = "fresh-blue";
+					// 载入数据
+					km.lazyImportJson(result);
+					//
+					Project.init(km.getRoot().data);
+				},
+				"error": function() {
+					alert("系统错误，请稍后重试!!!");
+				}
+			});
+		});
+	</script>
 
-</script>
 </html>

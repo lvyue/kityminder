@@ -103,7 +103,8 @@ module.exports = function(grunt) {
                         'edit.html',
                         'viewshare.html',
                         'm-share.html',
-                        'download.php'
+                        'download.php',
+                        'project.js'
                     ],
                     dest: distPath
                 }]

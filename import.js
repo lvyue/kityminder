@@ -63,15 +63,15 @@
         { path: 'src/core/lang.js',                     pack: 'edit|share|m-share' },
         { path: 'src/core/defaultoptions.js',           pack: 'edit|share|m-share' },
         { path: 'src/core/preference.js',               pack: 'edit|share|m-share' },
-        { path: 'src/core/keymap.js',                   pack: 'edit|share|m-share' },
+        { path: 'src/core/keymap.js',                   pack: 'edit|m-share' },
 
         /* 布局 */
         { path: 'src/layout/mind.js',                   pack: 'edit|share|m-share' },
-        { path: 'src/layout/filetree.js',               pack: 'edit|share|m-share' },
+        { path: 'src/layout/filetree.js',               pack: 'edit|m-share' },
         { path: 'src/layout/btree.js',                  pack: 'edit|share|m-share' },
-        { path: 'src/layout/fish-bone-master.js',       pack: 'edit|share|m-share' },
-        { path: 'src/layout/fish-bone-slave.js',        pack: 'edit|share|m-share' },
-        { path: 'src/layout/tianpan.js',                 pack: 'edit|share|m-share' },
+        { path: 'src/layout/fish-bone-master.js',       pack: 'edit' },
+        { path: 'src/layout/fish-bone-slave.js',        pack: 'edit' },
+        { path: 'src/layout/tianpan.js',                pack: 'edit' },
 
         /* 连线 */
         { path: 'src/connect/bezier.js',                pack: 'edit|share|m-share' },
@@ -80,23 +80,23 @@
         { path: 'src/connect/under.js',                 pack: 'edit|share|m-share' },
         { path: 'src/connect/l.js',                     pack: 'edit|share|m-share' },
         { path: 'src/connect/fish-bone-master.js',      pack: 'edit|share|m-share' },
-        { path: 'src/connect/arc_tp.js',                  pack: 'edit|share|m-share' },
+        { path: 'src/connect/arc_tp.js',                pack: 'edit|m-share' },
 
         /* 皮肤 */
         { path: 'src/theme/default.js',                 pack: 'edit|share|m-share' },
-        { path: 'src/theme/snow.js',                    pack: 'edit|share|m-share' },
+        { path: 'src/theme/snow.js',                    pack: 'edit' },
         { path: 'src/theme/fresh.js',                   pack: 'edit|share|m-share' },
-        { path: 'src/theme/fish.js',                    pack: 'edit|share|m-share' },
-        { path: 'src/theme/wire.js',                    pack: 'edit|share|m-share' },
-        { path: 'src/theme/tianpan.js',                 pack: 'edit|share|m-share' },
+        { path: 'src/theme/fish.js',                    pack: 'edit' },
+        { path: 'src/theme/wire.js',                    pack: 'edit' },
+        { path: 'src/theme/tianpan.js',                 pack: 'edit' },
 
         /* 模板 */
         { path: 'src/template/default.js',              pack: 'edit|share|m-share' },
-        { path: 'src/template/structure.js',            pack: 'edit|share|m-share' },
-        { path: 'src/template/filetree.js',             pack: 'edit|share|m-share' },
-        { path: 'src/template/right.js',                pack: 'edit|share|m-share' },
-        { path: 'src/template/fish-bone.js',            pack: 'edit|share|m-share' },
-        { path: 'src/template/tianpan.js',              pack: 'edit|share|m-share' },
+        { path: 'src/template/structure.js',            pack: 'edit' },
+        { path: 'src/template/filetree.js',             pack: 'edit' },
+        { path: 'src/template/right.js',                pack: 'edit' },
+        { path: 'src/template/fish-bone.js',            pack: 'edit' },
+        { path: 'src/template/tianpan.js',              pack: 'edit' },
 
         /* 模块 */
         { path: 'src/module/node.js',                   pack: 'edit|share|m-share' },
@@ -151,54 +151,54 @@
         { path: 'ui/widget/commandbuttonset.js',        pack: 'edit' },
         { path: 'ui/widget/commandinputmenu.js',        pack: 'edit' },
         { path: 'ui/widget/commandselectmenu.js',       pack: 'edit' },
-        { path: 'ui/widget/notice.js',                  pack: 'edit|share|m-share' },
+        { path: 'ui/widget/notice.js',                  pack: 'edit|m-share' },
         { path: 'ui/widget/friendlytimespan.js',        pack: 'edit' },
         { path: 'ui/widget/locallist.js',               pack: 'edit' },
         { path: 'ui/widget/netdiskfinder.js',           pack: 'edit' },
-        { path: 'ui/widget/menutab.js',                 pack: 'edit|share|m-share' },
+        { path: 'ui/widget/menutab.js',                 pack: 'edit|m-share' },
 
         /* 基本业务 */
         { path: 'ui/doc.js',                            pack: 'edit|share|m-share' },
-        { path: 'ui/contextmenu.js',                    pack: 'edit|share' },
+        { path: 'ui/contextmenu.js',                    pack: 'edit' },
 
         /* 视野导航 */
         { path: 'ui/nav.js',                            pack: 'edit|share' },
 
         /* UI Top Bar */
-        { path: 'ui/topbar/moreservice.js',             pack: 'edit|share'},
+        //{ path: 'ui/topbar/moreservice.js',             pack: 'edit'},
 
         /* UI 菜单 */
-        { path: 'ui/menu/menu.js',                      pack: 'edit|share' },
-        { path: 'ui/menu/header.js',                    pack: 'edit|share' },
-        { path: 'ui/menu/default.js',                   pack: 'edit' },
+        //{ path: 'ui/menu/menu.js',                      pack: 'edit' },
+        //{ path: 'ui/menu/header.js',                    pack: 'edit' },
+        //{ path: 'ui/menu/default.js',                   pack: 'edit' },
 
         /* UI 菜单 - 新建 */
-        { path: 'ui/menu/new/new.js',                   pack: 'edit' },
+        //{ path: 'ui/menu/new/new.js',                   pack: 'edit' },
 
         /* UI 菜单 - 打开 */
-        { path: 'ui/menu/open/open.js',                 pack: 'edit' },
+        //{ path: 'ui/menu/open/open.js',                 pack: 'edit' },
         //{ path: 'ui/menu/open/recent.js',               pack: 'edit' },
         //{ path: 'ui/menu/open/netdisk.js',              pack: 'edit' },
         //{ path: 'ui/menu/open/local.js',                pack: 'edit' },
         //{ path: 'ui/menu/open/draft.js',                pack: 'edit' },
 
         /* UI 菜单 - 保存 */
-        { path: 'ui/menu/save/save.js',                 pack: 'edit|share' },
+        //{ path: 'ui/menu/save/save.js',                 pack: 'edit' },
         //{ path: 'ui/menu/save/netdisk.js',              pack: 'edit' },
         //{ path: 'ui/menu/save/download.js',             pack: 'edit|share' },
 
         /* UI 菜单 - 分享 */
         //{ path: 'ui/menu/share/share.js',               pack: 'edit' },
-        { path: 'ui/menu/share/view.js',                pack: 'share' },
+        //{ path: 'ui/menu/share/view.js',                pack: 'share' },
         //{ path: 'ui/menu/share/m-share.js',             pack: 'm-share' },
 
         /* UI 菜单 - 帮助 */
-        { path: 'ui/menu/help/help.js',                 pack: 'edit|share'},
+        //{ path: 'ui/menu/help/help.js',                 pack: 'edit'},
         //{ path: 'ui/menu/help/feedback.js',             pack: 'edit|share'},
 
         /* UI Top Bar */
-        { path: 'ui/topbar/quickvisit.js',              pack: 'edit|share' },
-        { path: 'ui/topbar/history.js',                 pack: 'edit' },
+        //{ path: 'ui/topbar/quickvisit.js',              pack: 'edit' },
+        //{ path: 'ui/topbar/history.js',                 pack: 'edit' },
         // { path: 'ui/topbar/user.js',                    pack: 'edit' },
         //{ path: 'ui/topbar/feedback.js',                pack: 'edit|share' },
         //{ path: 'ui/topbar/search.js',                  pack: 'edit|share' },
@@ -217,23 +217,23 @@
         { path: 'ui/ribbon/idea/link.js',               pack: 'edit' },
         { path: 'ui/ribbon/idea/image.js',              pack: 'edit' },
         { path: 'ui/ribbon/idea/note.js',               pack: 'edit' },
-        { path: 'ui/ribbon/idea/notepreview.js',        pack: 'edit|share' },
+        { path: 'ui/ribbon/idea/notepreview.js',        pack: 'edit' },
         { path: 'ui/ribbon/idea/priority.js',           pack: 'edit' },
         { path: 'ui/ribbon/idea/progress.js',           pack: 'edit' },
-        { path: 'ui/ribbon/idea/resource.js',           pack: 'edit' },
+        //{ path: 'ui/ribbon/idea/resource.js',           pack: 'edit' },
 
         /* UI Ribbon「展示」面板 */
-        { path: 'ui/ribbon/appearence/template.js',     pack: 'edit' },
-        { path: 'ui/ribbon/appearence/theme.js',        pack: 'edit' },
-        { path: 'ui/ribbon/appearence/layout.js',       pack: 'edit' },
-        { path: 'ui/ribbon/appearence/style.js',        pack: 'edit' },
-        { path: 'ui/ribbon/appearence/font.js',         pack: 'edit' },
-        { path: 'ui/ribbon/appearence/color.js',        pack: 'edit' },
+        //{ path: 'ui/ribbon/appearence/template.js',     pack: 'edit' },
+        //{ path: 'ui/ribbon/appearence/theme.js',        pack: 'edit' },
+        //{ path: 'ui/ribbon/appearence/layout.js',       pack: 'edit' },
+        //{ path: 'ui/ribbon/appearence/style.js',        pack: 'edit' },
+        //{ path: 'ui/ribbon/appearence/font.js',         pack: 'edit' },
+        //{ path: 'ui/ribbon/appearence/color.js',        pack: 'edit' },
 
         /* UI Ribbon「视图」面板 */
-        { path: 'ui/ribbon/view/fullscreen.js',         pack: 'edit' },
-        { path: 'ui/ribbon/view/level.js',              pack: 'edit' },
-        { path: 'ui/ribbon/view/select.js',             pack: 'edit' }
+        //{ path: 'ui/ribbon/view/fullscreen.js',         pack: 'edit' },
+        //{ path: 'ui/ribbon/view/level.js',              pack: 'edit' },
+        //{ path: 'ui/ribbon/view/select.js',             pack: 'edit' }
     ];
 
     if (typeof(module) === 'object' && module.exports) {

@@ -137,6 +137,52 @@ kity.extendClass(Minder, {
             type: 'contentchange'
         });
         this._interactChange();
+        //
+        var _lazy_load_click = function (event){
+                    // 获取当前节点
+                    var _minderNode = event.getTargetNode();
+                    // 判断事件触发源是否是节点
+                    if (_minderNode && _minderNode instanceof MinderNode) {
+                        // 获取子节点数据
+                        var _children = _minderNode.getData("children");
+                        // 获取 判断标志为
+                        var _isLoad = _minderNode.getData("isLoad");
+                        // 判断该节点是否已载入，判断此节点是否有子节点
+                        if (!_isLoad && _children && _children.length > 0){
+                            for (var i = 0; i < _children.length; i++ ){
+                                var  e = _children[i];
+                                // 创建子节点
+                                var childNode = km.createNode(null, _minderNode);
+                                //
+                                childNode.data = {};
+                                // 设置自节点属性
+                                for (var field in e) {
+                                    childNode.setData(field, e[field]);
+                                }
+                                childNode.setData('text', e.name || km.getLang(DEFAULT_TEXT[childNode.getType()]));
+                            }
+                            _minderNode.collapse();
+                        }
+                        // 设置展开标志位
+                        _minderNode.setData('isLoad',true);
+                        //
+                        _minderNode.setData('children',null);
+                        //
+                        // 判断节点是否展开，如果未展开，则自动展开节点
+                        if (_minderNode.isCollapsed()){
+                            _minderNode.expand();
+                        }else{
+                        		_minderNode.collapse();
+                        }
+                        // 刷新脑图
+                        this.refresh(500);
+                        //this.fire('contentchange');
+                        // 元素居中
+                        this.execCommand('camera', _minderNode);
+                    }
+                };   
+        this.off('click touch',_lazy_load_click);
+        this.on('click touch',_lazy_load_click);
     },
 
     exportData: function(protocolName, options) {

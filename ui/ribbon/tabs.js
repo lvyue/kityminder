@@ -19,13 +19,19 @@ KityMinder.registerUI('ribbon/tabs', function(minder) {
 
     var $header = $('<div id="tab-select"></div>');
     var $container = $('<div id="tab-container"></div>');
-
+    // 隐藏
     $title.before($header);
     $('#panel').after($container);
-
+    // 取消 思路按钮
     $tab.appendButtonTo($header[0]);
-    $tab.appendPanelTo($container[0]);
-
+    $header.hide();
+    var _options = minder.getOptions();
+    if (!_options.readOnly) {
+        memory.set('ribbon-tab-collapsed', false);
+        $tab.appendPanelTo($container[0]);
+    } else{
+        memory.set('ribbon-tab-collapsed', true);
+    }
     // 隐藏效果
     var lastIndex = 0;
     var muteRemember = false;

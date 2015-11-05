@@ -74,8 +74,6 @@ Minder.Receiver = kity.createClass('Receiver', {
         this.setSelectionHeight();
         //更新接收容器内容
         this.setContainerTxt();
-        new Error();
-        console.log(1);
         return this;
     },
     setMinderNode: function(node) {

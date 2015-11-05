@@ -8,7 +8,7 @@
  */
 Minder.registerInit(function(options) {
     if (options.readOnly) {
-        this.setDisabled();
+        this.disable();
     }
 });
 kity.extendClass(Minder, {

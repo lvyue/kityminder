@@ -4,7 +4,7 @@
         //modules: [],
 
         // 只读模式，默认是false
-        readOnly: false,
+        readOnly: true,
 
         // 默认主题
         defaultTemplate: 'default',
@@ -13,7 +13,7 @@
         defaultTheme: 'fresh-blue',
 
         // 最大可回退的次数，默认 20
-        maxUndoCount: 20,
+        maxUndoCount: 0,
 
         // 语言，默认是 'zh-cn'
         lang: 'zh-cn',
